@@ -205,6 +205,10 @@ void Evaluate_Basis_and_Electrons(vector<Atom> atoms){
     total_electrons = (Carbon_count * 6) + (Hydrogen_count * 1);
     total_electrons_pairs = total_electrons / 2;
 
+    if(total_electrons_pairs != int(total_electrons_pairs)){
+        throw runtime_error("Error: Number of electron paris isn't an integer!");
+    }
+
     N = (4 * Carbon_count) + Hydrogen_count;
 
     total_electrons = (Carbon_count * 4) + (Hydrogen_count * 1); // Valence electrons
